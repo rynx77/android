@@ -8,9 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-/**
- * Activité principale de l'application GSB.
- */
+
 public class MainActivity extends AppCompatActivity {
 
     SQLiteDatabaseHelper db;
@@ -49,9 +47,7 @@ public class MainActivity extends AppCompatActivity {
         textListe = findViewById(R.id.textViewListe);
     }
 
-    /**
-     * Ajoute un professionnel.
-     */
+
     public void insertionClic(View view) {
         db.insertData(
                 nomInput.getText().toString(),
@@ -64,9 +60,7 @@ public class MainActivity extends AppCompatActivity {
         textListe.setText("Professionnel ajouté");
     }
 
-    /**
-     * Affiche tous les professionnels.
-     */
+
     public void afficherClic(View view) {
         Cursor data = db.getAllData();
 
@@ -86,9 +80,7 @@ public class MainActivity extends AppCompatActivity {
         textListe.setText(texte);
     }
 
-    /**
-     * Recherche un professionnel par ville ou code postal.
-     */
+
     public void rechercheClic(View view) {
         Cursor data = db.searchData(
                 rechercheInput.getText().toString()
@@ -109,9 +101,7 @@ public class MainActivity extends AppCompatActivity {
         textListe.setText(texte);
     }
 
-    /**
-     * Ajoute un rendez-vous.
-     */
+
     public void rdvClic(View view) {
         db.insertRDV(
                 dateInput.getText().toString(),
@@ -122,9 +112,7 @@ public class MainActivity extends AppCompatActivity {
         textListe.setText("RDV ajouté");
     }
 
-    /**
-     * Affiche le planning d'une journée.
-     */
+
     public void planningClic(View view) {
         Cursor data = db.getPlanning(
                 dateInput.getText().toString()

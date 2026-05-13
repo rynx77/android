@@ -6,14 +6,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-/**
- * Classe de gestion de la base SQLite
- */
+
 public class SQLiteDatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "GSB.db";
 
-    // TABLE PROFESSIONNEL
+
     public static final String TABLE_PRO = "professionnel";
 
     public static final String COL_1 = "ID";
@@ -35,9 +33,7 @@ public class SQLiteDatabaseHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, 1);
     }
 
-    /**
-     * Création des tables
-     */
+
     @Override
     public void onCreate(SQLiteDatabase db) {
 
@@ -60,9 +56,7 @@ public class SQLiteDatabaseHelper extends SQLiteOpenHelper {
         );
     }
 
-    /**
-     * Mise à jour de la base
-     */
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
@@ -73,9 +67,7 @@ public class SQLiteDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    /**
-     * Insertion d'un professionnel
-     */
+
     public void insertData(String nom,
                            String prenom,
                            String type,
@@ -101,9 +93,7 @@ public class SQLiteDatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    /**
-     * Affiche tous les professionnels
-     */
+
     public Cursor getAllData() {
 
         SQLiteDatabase db = this.getReadableDatabase();
@@ -111,9 +101,7 @@ public class SQLiteDatabaseHelper extends SQLiteOpenHelper {
         return db.rawQuery("SELECT * FROM " + TABLE_PRO, null);
     }
 
-    /**
-     * Recherche par ville ou code postal
-     */
+
     public Cursor searchData(String recherche) {
 
         SQLiteDatabase db = this.getReadableDatabase();
@@ -128,9 +116,7 @@ public class SQLiteDatabaseHelper extends SQLiteOpenHelper {
         );
     }
 
-    /**
-     * Insertion d'un rendez-vous
-     */
+
     public void insertRDV(String date,
                           String heure,
                           int idPro) {
@@ -150,9 +136,7 @@ public class SQLiteDatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    /**
-     * Affichage du planning d'une journée
-     */
+
     public Cursor getPlanning(String date) {
 
         SQLiteDatabase db = this.getReadableDatabase();
