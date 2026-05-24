@@ -1,106 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/editTextNom"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nom" />
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <EditText
-        android:id="@+id/editTextPrenom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Prénom" />
+        <EditText
+            android:id="@+id/editTextNom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nom" />
 
-    <EditText
-        android:id="@+id/editTextType"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Type" />
+        <EditText
+            android:id="@+id/editTextPrenom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Prénom" />
 
-    <EditText
-        android:id="@+id/editTextVille"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Ville" />
+        <EditText
+            android:id="@+id/editTextType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Type" />
 
-    <EditText
-        android:id="@+id/editTextCodePostal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Code postal" />
+        <EditText
+            android:id="@+id/editTextVille"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ville" />
 
-    <Button
-        android:id="@+id/buttonAjouter"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ajouter professionnel"
-        android:onClick="insertionClic" />
+        <EditText
+            android:id="@+id/editTextCodePostal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Code postal" />
 
-    <Button
-        android:id="@+id/buttonAfficher"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Afficher professionnels"
-        android:onClick="afficherClic" />
+        <Button
+            android:id="@+id/buttonAjouter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ajouter professionnel"
+            android:onClick="insertionClic" />
 
-    <EditText
-        android:id="@+id/editTextRecherche"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Recherche ville ou code postal" />
+        <Button
+            android:id="@+id/buttonAfficher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Afficher professionnels"
+            android:onClick="afficherClic" />
 
-    <Button
-        android:id="@+id/buttonRecherche"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Rechercher"
-        android:onClick="rechercheClic" />
+        <EditText
+            android:id="@+id/editTextRecherche"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Recherche ville ou code postal" />
 
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Date RDV " />
+        <Button
+            android:id="@+id/buttonRecherche"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rechercher"
+            android:onClick="rechercheClic" />
 
-    <EditText
-        android:id="@+id/editTextHeure"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Heure RDV " />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Prise de RDV"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:paddingTop="20dp" />
 
-    <EditText
-        android:id="@+id/editTextIdPro"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="ID professionnel" />
+        <EditText
+            android:id="@+id/editTextIdPro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID professionnel" />
 
-    <Button
-        android:id="@+id/buttonRDV"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ajouter RDV"
-        android:onClick="rdvClic" />
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/buttonPlanning"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Planning journée"
-        android:onClick="planningClic" />
+        <EditText
+            android:id="@+id/editTextHeure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Heure RDV ex : 14:00" />
 
-    <TextView
-        android:id="@+id/textViewListe"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Résultat"
-        android:paddingTop="20dp" />
+        <Button
+            android:id="@+id/buttonRDV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ajouter RDV"
+            android:onClick="rdvClic" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/buttonPlanning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Planning journée"
+            android:onClick="planningClic" />
+
+        <TextView
+            android:id="@+id/textViewListe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Résultat"
+            android:paddingTop="20dp" />
+
+    </LinearLayout>
+
+</ScrollView>
